@@ -10,6 +10,19 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d9b6b6;
+  border-radius: 30px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1cdcd;
+}
+
 .overlap {
   position: relative;
 }
@@ -494,6 +507,7 @@ footer #special-cont {
   border: none;
   display: flex;
   flex-direction: column;
+  outline: none;
 
   justify-content: center;
   z-index: 5;
@@ -583,7 +597,7 @@ dialog:not([open]) {
 .modal button {
   background-color: #f1cdcd;
   border: none;
-  color: white;
+  color: #000;
   padding: 10px 20px;
   margin-top: 50px;
   text-align: center;
@@ -719,6 +733,7 @@ dialog:not([open]) {
   margin-left: 5px;
   font-size: 15px;
   margin-right: 35px;
+  cursor: pointer;
 }
 
 .dash-icon {
@@ -735,10 +750,17 @@ dialog:not([open]) {
   display: flex;
   align-items: center;
   padding-bottom: 8px;
+  cursor: pointer;
 }
 
 .dashboard .project-cont .project-select-group .project-select .project-name {
   margin-left: 10px;
+  font-size: 12px;
+}
+
+.project-description {
+  width: 450px;
+  margin-left: 110px;
   font-size: 12px;
 }
 
@@ -793,7 +815,7 @@ dialog:not([open]) {
 }
 
 .reminders {
-  width: 320px;
+  width: 450px;
   height: 120px;
   background-color: #d0d0d0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -891,9 +913,8 @@ dialog:not([open]) {
 .task .task-category-cont .task-category {
   padding: 2px 8px;
   width: auto;
+  white-space: nowrap;
   margin-right: 10px;
-  border: 1px solid orange;
-  background-color: orange;
   border-radius: 8px;
   font-weight: 600;
 }
@@ -911,4 +932,57 @@ dialog:not([open]) {
 
 .task .task-content {
   padding-bottom: 10px;
+}
+
+.add-project-modal {
+  padding: 30px;
+}
+
+.add-project-modal textarea {
+  height: 210px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+}
+
+.add-project-modal textarea:focus {
+  border-color: #f1cdcd;
+  box-shadow: 0 0 5px #6f9efa;
+}
+
+.add-project-modal span {
+  font-size: 11px;
+  margin-top: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.add-project-modal h1 {
+  padding-bottom: 15px;
+}
+
+.add-project-modal .button-cont {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.add-project-modal button {
+  margin-top: 16px;
+}
+
+.add-project-modal .selected-cats {
+  height: 20px;
+  width: fit-content;
+  display: flex;
+  margin-left: auto;
+}
+
+.add-project-modal .selected-cats h3 {
+  font-size: 11px;
+  font-weight: 400;
+  margin-right: 5px;
 }

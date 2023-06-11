@@ -8,8 +8,9 @@ import {
   Routes,
 } from "react-router-dom";
 import EntrepSignup from "../components/EntrepSignup";
+import { useState } from "react";
 
-const SignUp = () => {
+const SignUp = ({ setCurrentUser, currentUser }) => {
   const location = useLocation();
 
   return (
@@ -26,7 +27,10 @@ const SignUp = () => {
           <h1>Submit your details</h1>
           <div className="signup-cont">
             {location.pathname === "/signup/individual-signup" ? (
-              <IndvlSignup />
+              <IndvlSignup
+                setCurrentUser={setCurrentUser}
+                currentUser={currentUser}
+              />
             ) : (
               <EntrepSignup />
             )}

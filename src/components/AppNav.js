@@ -6,15 +6,21 @@ import userProfileIcon from "../image_folder/icons/user-profile.png";
 import settingsIcon from "../image_folder/icons/Settings.png";
 import logoutIcon from "../image_folder/icons/Logout.png";
 
-const AppNav = () => {
+const AppNav = ({ userDetails }) => {
+  const name = userDetails.firstName;
   return (
     <>
       <div className="side-bar">
         <div className="profile">
           <div className="profile-pic">
-            <h1>C</h1>
+            {console.log(name)}
+            <h1>{name[0].toUpperCase()}</h1>
           </div>
-          <p>Hey Chibuikem</p>
+          <p>
+            Hey{" "}
+            {userDetails.firstName.charAt(0).toUpperCase() +
+              userDetails.firstName.slice(1)}
+          </p>
         </div>
         <div className="icon-container">
           <img src={dashIcon} alt="" className="dash-icon-img" />

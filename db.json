@@ -1,0 +1,111 @@
+{
+  "users": [
+    {
+      "firstName": "Ikem",
+      "lastName": "Eteh",
+      "email": "chibuikemalalieteh@gmail.com",
+      "password": "password",
+      "level": "individual",
+      "projects": [],
+      "userCreationDate": "2023-05-22T12:05:44.283Z",
+      "notifications": [],
+      "userPreferences": {
+        "emailNotifications": {
+          "productUpdate": true,
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        },
+        "pushNotifications": {
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        }
+      },
+      "id": 1
+    },
+    {
+      "firstName": "bob",
+      "lastName": "stew",
+      "email": "ikem.eteh@gmail.com",
+      "password": "pass",
+      "level": "individual",
+      "projects": [
+        {
+          "id": 1,
+          "name": "Workspace",
+          "category": [
+            "Webapp",
+            "Product Design"
+          ],
+          "description": "project to automate the workflow of work items without the need for manual walking up and down",
+          "reminders": [
+            "Please be punctual for the team meeting this Friday by 6",
+            "The API for the insurance module will soon be provided",
+            "Salary to be expected this Friday no fear"
+          ],
+          "tasks": [
+            {
+              "id": 1,
+              "name": "Landing page UI design",
+              "category": [
+                "Design"
+              ],
+              "level": "newtask",
+              "content": "Use preferences from conceptizilla ui board and create a landing page for workflow"
+            },
+            {
+              "id": 2,
+              "name": "Page Development and Debugging",
+              "category": [
+                "Page Dev",
+                "Debugging"
+              ],
+              "level": "newtask",
+              "content": "Make use of HTML, CSS and Vanilla javascript to create the landing page for workflow. also implement tailwind and bootstrap for a better user experience."
+            }
+          ]
+        },
+        {
+          "name": "RedTech",
+          "category": [
+            "Finance",
+            "WebApp"
+          ],
+          "description": "A project to help pay the salaries of individuals",
+          "tasks": [],
+          "reminders": []
+        },
+        {
+          "name": "ACH",
+          "category": [
+            "Finance",
+            "Registration"
+          ],
+          "description": "A project to help submit cheques for approval",
+          "tasks": [],
+          "reminders": []
+        },
+        {
+          "name": "",
+          "category": [],
+          "description": "",
+          "tasks": [],
+          "reminders": []
+        }
+      ],
+      "userCreationDate": "2023-06-08T17:55:14.473Z",
+      "notifications": [],
+      "userPreferences": {
+        "emailNotifications": {
+          "productUpdate": true,
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        },
+        "pushNotifications": {
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        }
+      },
+      "id": 2
+    }
+  ]
+}
