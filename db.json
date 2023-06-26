@@ -6,7 +6,56 @@
       "email": "chibuikemalalieteh@gmail.com",
       "password": "password",
       "level": "individual",
-      "projects": [],
+      "projects": [
+        {
+          "name": "Geostorm",
+          "category": [
+            "Destruction",
+            "destroy"
+          ],
+          "description": "create a world disaster using the project created by the government to control weather conditions",
+          "tasks": [
+            {
+              "name": "Destroy",
+              "category": [
+                "Destroyyyyyy"
+              ],
+              "content": "",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-21T23:10:54.683Z"
+            }
+          ],
+          "reminders": [
+            "brush your teeth before work"
+          ]
+        },
+        {
+          "name": "Ticket buyer",
+          "category": [
+            "Webapp",
+            "MobileApp",
+            "Finance"
+          ],
+          "description": "A platform where a company can organize and sell events all by sharing links and online payments",
+          "tasks": [
+            {
+              "name": "Landing Page Design",
+              "category": [
+                "Screen Design",
+                "Figma"
+              ],
+              "content": "use a nice color gradient to design the landing page of a ticket buyer landing page. The name of the application is yet to be set",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-29T23:00:00.000Z"
+            }
+          ],
+          "reminders": []
+        }
+      ],
       "userCreationDate": "2023-05-22T12:05:44.283Z",
       "notifications": [],
       "userPreferences": {
@@ -61,6 +110,17 @@
               ],
               "level": "newtask",
               "content": "Make use of HTML, CSS and Vanilla javascript to create the landing page for workflow. also implement tailwind and bootstrap for a better user experience."
+            },
+            {
+              "name": "yoo",
+              "category": [
+                "yoo"
+              ],
+              "content": "yoooo",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-29T23:00:00.000Z"
             }
           ]
         },
@@ -68,31 +128,80 @@
           "name": "RedTech",
           "category": [
             "Finance",
-            "WebApp"
+            "Webapp"
           ],
-          "description": "A project to help pay the salaries of individuals",
-          "tasks": [],
+          "description": "RedTech is a futuristic solution to make sure that the whole team working with you are satisfied at every step of the way.",
+          "tasks": [
+            {
+              "name": "Screen Design",
+              "category": [
+                "Design",
+                "Planning"
+              ],
+              "content": "Design a nice looking screen",
+              "level": "newTask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-29T23:00:00.000Z"
+            },
+            {
+              "name": "Screen Design",
+              "category": [
+                "Design"
+              ],
+              "content": "Create a nice screen design",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-30T23:00:00.000Z"
+            },
+            {
+              "name": "Code",
+              "category": [
+                "Code"
+              ],
+              "content": "Code",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-20T23:00:00.000Z"
+            }
+          ],
           "reminders": []
         },
         {
           "name": "ACH",
           "category": [
             "Finance",
-            "Registration"
+            "Data Processing"
           ],
-          "description": "A project to help submit cheques for approval",
+          "description": "ACH is a solution that gives a solution the handling of pyhsical cheques without the hastle of going to cheque collection centeres",
           "tasks": [],
           "reminders": []
         },
         {
-          "name": "",
-          "category": [],
-          "description": "",
-          "tasks": [],
+          "name": "PPAI",
+          "category": [
+            "Loans"
+          ],
+          "description": "This project helps with distribution and collection of loans",
+          "tasks": [
+            {
+              "name": "Hey",
+              "category": [
+                "Hey"
+              ],
+              "content": "Hey",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-29T23:00:00.000Z"
+            }
+          ],
           "reminders": []
         }
       ],
-      "userCreationDate": "2023-06-08T17:55:14.473Z",
+      "userCreationDate": "2023-06-20T16:50:43.184Z",
       "notifications": [],
       "userPreferences": {
         "emailNotifications": {
@@ -106,6 +215,125 @@
         }
       },
       "id": 2
+    },
+    {
+      "firstName": "Kosi",
+      "lastName": "Zimako",
+      "email": "kosi.zimako@gmail.com",
+      "password": "password",
+      "level": "individual",
+      "projects": [
+        {
+          "name": "Sementic",
+          "category": [
+            "Building",
+            "architecture"
+          ],
+          "description": "Project to plan all the structures of the building plan",
+          "tasks": [
+            {
+              "name": "hey",
+              "category": [
+                "hey",
+                "ho"
+              ],
+              "content": "hey",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-29T23:00:00.000Z"
+            },
+            {
+              "name": "Score",
+              "category": [
+                "Goal"
+              ],
+              "content": "Make sure to score a goal in todays match",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-27T23:00:00.000Z"
+            }
+          ],
+          "reminders": [
+            "dont forget to smile today",
+            "keep a clean environment",
+            "throw trash away"
+          ]
+        },
+        {
+          "name": "Ikemsochukwu",
+          "category": [
+            "LoveForever",
+            "KeepForever"
+          ],
+          "description": "Show Ikem how much i love him because i know how much he loves me and he'll never let me go",
+          "tasks": [
+            {
+              "name": "Kidnap Ikem",
+              "category": [
+                "Heist",
+                "Retrieval"
+              ],
+              "content": "Go to Ikems house and kidnap him so he can be mine forever and we never have to be apart from each other again. Then we can kiss and cuddle and ill be a good girl and eat my food",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2023-06-29T23:00:00.000Z"
+            }
+          ],
+          "reminders": []
+        }
+      ],
+      "userCreationDate": "2023-06-22T09:01:28.403Z",
+      "notifications": [],
+      "userPreferences": {
+        "emailNotifications": {
+          "productUpdate": true,
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        },
+        "pushNotifications": {
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        }
+      },
+      "id": 3
+    },
+    {
+      "firstName": "Funke",
+      "lastName": "babalola",
+      "email": "funke.babalola@gmail.com",
+      "password": "passowrd",
+      "level": "individual",
+      "projects": [
+        {
+          "name": "Workflow",
+          "category": [
+            "Collaboration",
+            "Webdesign"
+          ],
+          "description": "A service that processes requests at different levels",
+          "tasks": [],
+          "reminders": [
+            "remember to always comment your code"
+          ]
+        }
+      ],
+      "userCreationDate": "2023-06-22T11:42:21.378Z",
+      "notifications": [],
+      "userPreferences": {
+        "emailNotifications": {
+          "productUpdate": true,
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        },
+        "pushNotifications": {
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        }
+      },
+      "id": 4
     }
   ]
 }

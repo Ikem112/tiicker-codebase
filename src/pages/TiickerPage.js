@@ -1,14 +1,16 @@
 import AppNav from "../components/AppNav";
 import Dashboard from "./Dashboard";
+import { useLocation } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import { useState } from "react";
+import UserProfile from "../components/profileComps/UserProfile";
 
 const TiickerPage = () => {
   const [userDetails, setUserDetails] = useState(
     JSON.parse(localStorage.getItem("user"))
   );
-
+  const location = useLocation();
   // const getUser = async (storedUser) => {
   //   try {
   //     const res = await fetch(`http://localhost:5000/users`);
@@ -31,12 +33,27 @@ const TiickerPage = () => {
   //   console.log("hi from useEffect");
   // });
 
+  // useEffect(() => {
+  //   window.location.reload();
+  // });
+
   return (
     <div className="tiicker-page-wrapper">
       {console.log("im hitting ticker page")}
       <AppNav userDetails={userDetails} />
       <div className="content-section">
-        <Dashboard userDetails={userDetails} setUserDetails={setUserDetails} />
+        {location.pathname === "/dashboard" && (
+          <Dashboard
+            userDetails={userDetails}
+            setUserDetails={setUserDetails}
+          />
+        )}
+        {location.pathname === "/profile" && (
+          <UserProfile
+            userDetails={userDetails}
+            setUserDetails={setUserDetails}
+          />
+        )}
       </div>
     </div>
   );

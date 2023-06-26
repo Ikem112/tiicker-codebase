@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPasssword] = useState("");
 
@@ -43,6 +45,36 @@ const LoginForm = () => {
         element.style.borderColor = "red";
       });
     }
+    const validateDetails = async () => {
+      const getUsers = async () => {
+        try {
+          const res = await fetch(`http://localhost:5000/users`);
+          const data = await res.json();
+
+          return data;
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      };
+
+      const users = await getUsers();
+
+      const existUser = users.find((user) => user.email === loginEmail);
+      console.log(users);
+
+      if (!existUser) {
+        setTriggerError(true);
+      } else {
+        if (existUser.password === loginPassword) {
+          localStorage.setItem("user", JSON.stringify(existUser));
+          navigate("/dashboard");
+          window.location.reload();
+        } else {
+          setTriggerError(true);
+        }
+      }
+    };
+    validateDetails();
   };
 
   return (
@@ -73,7 +105,7 @@ const LoginForm = () => {
       </div>
       <p className="reset-password-link">Forgot password?</p>
       <div className="form-control">
-        <button>Login</button>
+        <button className="button">Login</button>
       </div>
     </form>
   );

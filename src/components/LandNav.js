@@ -1,5 +1,6 @@
 import logo from "../image_folder/Tiicker_logo_1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 import UserSelectionModal from "../pages/UserSelectionModal";
 
 const LandNav = ({ dialogRef }) => {

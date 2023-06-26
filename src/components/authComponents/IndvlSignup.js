@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../context/UserContext";
+import { UserContext } from "../../context/UserContext";
 
 const IndvlSignup = () => {
   const navigate = useNavigate();
@@ -21,6 +21,8 @@ const IndvlSignup = () => {
       });
       localStorage.setItem("user", JSON.stringify(user));
       console.log(user.email);
+      navigate("/dashboard");
+      console.log(localStorage.getItem("user"));
     } catch (error) {
       console.error(error);
     }
@@ -156,38 +158,7 @@ const IndvlSignup = () => {
         email: email,
         password: password,
         level: "individual",
-        projects: [
-          {
-            id: 1,
-            name: "Workspace",
-            category: ["Webapp", "Product Design"],
-            description:
-              "project to automate the workflow of work items without the need for manual walking up and down",
-            reminders: [
-              "Please be punctual for the team meeting this Friday by 6",
-              "The API for the insurance module will soon be provided",
-              "Salary to be expected this Friday no fear",
-            ],
-            tasks: [
-              {
-                id: 1,
-                name: "Landing page UI design",
-                category: ["Design"],
-                level: "newtask",
-                content:
-                  "Use preferences from conceptizilla ui board and create a landing page for workflow",
-              },
-              {
-                id: 2,
-                name: "Page Development and Debugging",
-                category: ["Page Dev", "Debugging"],
-                level: "newtask",
-                content:
-                  "Make use of HTML, CSS and Vanilla javascript to create the landing page for workflow. also implement tailwind and bootstrap for a better user experience.",
-              },
-            ],
-          },
-        ],
+        projects: [],
         userCreationDate: new Date(),
         notifications: [],
         userPreferences: {
@@ -203,8 +174,6 @@ const IndvlSignup = () => {
         },
       };
 
-      addUser(user);
-
       setFirstName("");
       setLastName("");
       setEmail("");
@@ -212,8 +181,8 @@ const IndvlSignup = () => {
       setConfirmPassword("");
       setCompany("");
 
+      addUser(user);
       console.log(localStorage.getItem("email"));
-      navigate("/dashboard");
     }
   };
 
@@ -323,8 +292,8 @@ const IndvlSignup = () => {
         </div>
       </div>
 
-      <div className="form-control">
-        <button>Submit</button>
+      <div className="form-control button">
+        <button className="button">Submit</button>
       </div>
     </form>
   );

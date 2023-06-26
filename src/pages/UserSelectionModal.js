@@ -72,7 +72,9 @@ const UserSelectionModal = ({ dialogRef }) => {
           </div>
         </div>
 
-        <button onClick={handleContinueButtonClick}>Continue</button>
+        <button id="defined-button" onClick={handleContinueButtonClick}>
+          Continue
+        </button>
       </dialog>
     </div>
   );

@@ -1,13 +1,14 @@
 import React from "react";
 import signup_pic from "../image_folder/signup-pic.png";
-import IndvlSignup from "../components/IndvlSignup";
+import IndvlSignup from "../components/authComponents/IndvlSignup";
 import {
   useLocation,
   BrowserRouter as Route,
   Router,
   Routes,
+  Link,
 } from "react-router-dom";
-import EntrepSignup from "../components/EntrepSignup";
+import EntrepSignup from "../components/authComponents/EntrepSignup";
 import { useState } from "react";
 
 const SignUp = ({ setCurrentUser, currentUser }) => {
@@ -24,6 +25,14 @@ const SignUp = ({ setCurrentUser, currentUser }) => {
           </div>
         </div>
         <div className="right-side">
+          <div className="link-cont">
+            <p>
+              <Link to="/">Home</Link>
+            </p>
+            <p>
+              <Link to="/login">Login</Link>
+            </p>
+          </div>
           <h1>Submit your details</h1>
           <div className="signup-cont">
             {location.pathname === "/signup/individual-signup" ? (

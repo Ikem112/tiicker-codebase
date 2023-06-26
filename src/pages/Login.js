@@ -1,6 +1,7 @@
 import React from "react";
 import login_pic from "../image_folder/login-pic.png";
-import LoginForm from "../components/LoginForm";
+import LoginForm from "../components/authComponents/LoginForm";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -14,6 +15,14 @@ const Login = () => {
           </div>
         </div>
         <div className="right-side">
+          <div className="link-cont">
+            <p>
+              <Link to="/">Home</Link>
+            </p>
+            <p>
+              <Link to="/signup/individual-signup">SignUp</Link>
+            </p>
+          </div>
           <h1>Enter your Details</h1>
           <div className="login-cont">
             <LoginForm />

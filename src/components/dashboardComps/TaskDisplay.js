@@ -1,7 +1,27 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FaPlus } from "react-icons/fa";
+import { IconName } from "react-icons/bi";
+import AddTasks from "./AddTasks";
 
-const TaskDisplay = ({ projectData }) => {
+const TaskDisplay = ({
+  projectData,
+  addTaskRef,
+  getUserID,
+  userDetails,
+  setProjectData,
+}) => {
+  const setFormattedDate = (date) => {
+    const formattedDate = new Date(date)
+      .toLocaleDateString("en", {
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit",
+      })
+      .replace(/\//g, "/");
+
+    return formattedDate;
+  };
+
   const [catBackColor, setCatBackColor] = useState("grey");
 
   const getRandomColour = () => {
@@ -44,7 +64,10 @@ const TaskDisplay = ({ projectData }) => {
               <div className="task-status-title new-task">
                 <div className="pointer"></div> New task
               </div>
-              <div className="add-task new-task">
+              <div
+                className="add-task new-task"
+                onClick={() => addTaskRef.current.showModal()}
+              >
                 <FaPlus />
               </div>
               {projectData.tasks.map(
@@ -64,7 +87,9 @@ const TaskDisplay = ({ projectData }) => {
                       </div>
                       <div className="task-title">{task.name}</div>
                       <div className="task-content">{task.content}</div>
-                      <div className="task-due-date">Due date - 09/05/23</div>
+                      <div className="task-due-date">
+                        Due date - {setFormattedDate(task.dueDate)}
+                      </div>
                     </div>
                   )
               )}
@@ -72,9 +97,6 @@ const TaskDisplay = ({ projectData }) => {
             <div className="task-column">
               <div className="task-status-title in-progress">
                 <div className="pointer"></div> In Progress
-              </div>
-              <div className="add-task new-task">
-                <FaPlus />
               </div>
               {projectData.tasks.map(
                 (task, index) =>
@@ -104,7 +126,7 @@ const TaskDisplay = ({ projectData }) => {
               </div>
               {projectData.tasks.map(
                 (task, index) =>
-                  task.level === "newtask" && (
+                  task.level === "dueSoon" && (
                     <div className="task" key={index}>
                       <div className="task-category-cont">
                         {task.category.map((category, index) => (
@@ -126,6 +148,13 @@ const TaskDisplay = ({ projectData }) => {
             </div>
           </div>
         )}
+        <AddTasks
+          setProjectData={setProjectData}
+          addTaskRef={addTaskRef}
+          projectData={projectData}
+          getUserID={getUserID}
+          userDetails={userDetails}
+        />
       </div>
     </>
   );

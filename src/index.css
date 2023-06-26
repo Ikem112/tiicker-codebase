@@ -404,7 +404,7 @@ footer #special-cont {
   color: #fff;
 }
 
-.form-control button {
+.form-control .button {
   background-color: #ffefef;
   margin-top: 20px;
   color: black;
@@ -478,7 +478,7 @@ footer #special-cont {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 50px 50px 50px 75px;
   height: 100vh;
   background-color: white;
@@ -488,13 +488,24 @@ footer #special-cont {
   padding-bottom: 50px;
 }
 
+.link-cont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.link-cont a {
+  text-decoration: none;
+  padding-right: 20px;
+}
+
 .login-form .reset-password-link {
   padding: 30px 0px 0px 0px;
   cursor: pointer;
 }
 
 .modal {
-  position: fixed;
+  /* position: fixed; */
   top: 50%;
   transform: translateY(-50%);
   left: 0;
@@ -505,9 +516,10 @@ footer #special-cont {
   padding: 50px;
   width: 800px;
   border: none;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   outline: none;
+  overflow: auto;
 
   justify-content: center;
   z-index: 5;
@@ -594,7 +606,7 @@ dialog:not([open]) {
   font-weight: 600;
 }
 
-.modal button {
+.modal #defined-button {
   background-color: #f1cdcd;
   border: none;
   color: #000;
@@ -608,7 +620,7 @@ dialog:not([open]) {
   width: 150px;
 }
 
-.modal button #continue-text {
+.modal #defined-button #continue-text {
   text-decoration: none;
   outline: none;
   color: black;
@@ -675,23 +687,30 @@ dialog:not([open]) {
 .side-bar .icon-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 }
 
-.side-bar .icon-container > img {
+.side-bar .icon-container a img {
   padding: 14px 0px 14px 0;
   width: 25px;
-  height: 100%;
+  height: auto;
+  cursor: pointer;
 }
 
 .side-bar .sidebar-bottom {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: auto;
 }
 
 .side-bar .sidebar-bottom > img {
   width: 25px;
-  padding-bottom: 14px;
+  margin: 40%;
   height: 100%;
+  cursor: pointer;
 }
 
 .dashboard {
@@ -825,17 +844,20 @@ dialog:not([open]) {
   scrollbar-width: none;
 }
 
-.reminders .reminders-title {
+.reminders .reminder-title {
   font-size: 15px;
   font-weight: 600;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
   border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
 }
 
 .reminders ul {
   font-size: 11px;
   list-style-type: disc;
   padding-left: 15px;
+  padding-top: 5px;
 }
 
 .task-display {
@@ -866,6 +888,7 @@ dialog:not([open]) {
 
 .task-wrapper > div {
   margin-right: 20px;
+  min-width: 180px;
 }
 
 .task-wrapper .task-column .task-status-title {
@@ -883,6 +906,7 @@ dialog:not([open]) {
   border-radius: 10px;
   margin-bottom: 10px;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
 }
@@ -934,11 +958,11 @@ dialog:not([open]) {
   padding-bottom: 10px;
 }
 
-.add-project-modal {
+.add-modal {
   padding: 30px;
 }
 
-.add-project-modal textarea {
+.add-modal textarea {
   height: 210px;
   border: 2px solid #ccc;
   border-radius: 15px;
@@ -946,43 +970,167 @@ dialog:not([open]) {
   font-size: 16px;
   resize: none;
   outline: none;
+  font: inherit;
 }
 
-.add-project-modal textarea:focus {
+.add-modal textarea:focus {
   border-color: #f1cdcd;
   box-shadow: 0 0 5px #6f9efa;
 }
 
-.add-project-modal span {
+.add-modal span {
   font-size: 11px;
   margin-top: 5px;
   margin-left: 5px;
   cursor: pointer;
 }
 
-.add-project-modal h1 {
+.add-modal h1 {
   padding-bottom: 15px;
 }
 
-.add-project-modal .button-cont {
+.add-modal .button-cont {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.add-project-modal button {
+.add-modal #defined-button {
   margin-top: 16px;
 }
 
-.add-project-modal .selected-cats {
+.add-modal .selected-cats {
   height: 20px;
   width: fit-content;
   display: flex;
   margin-left: auto;
 }
 
-.add-project-modal .selected-cats h3 {
+.add-modal .selected-cats h3 {
   font-size: 11px;
   font-weight: 400;
   margin-right: 5px;
+}
+
+.calendar-overlay {
+  position: fixed;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent background */
+  display: none; /* Initially hidden */
+}
+
+.calendar-overlay.open {
+  display: flex; /* Show the calendar when open */
+  justify-content: center;
+  align-items: center;
+}
+
+/* USER PROFILE */
+
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  background-color: rgb(226, 166, 166);
+}
+
+.upper-region {
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.upper-region .profile-pic-cont {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: rgb(245, 105, 105);
+  padding: 5px;
+  overflow: hidden;
+}
+
+.upper-region .profile-pic-cont img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+.lower-region {
+  border-radius: 12px 12px 0px 0px;
+  height: 70%;
+  background-color: white;
+  display: flex;
+}
+
+.lower-region .left-side {
+  height: 100%;
+  width: 45%;
+  padding: 30px;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lower-region .left-side .info-control-cont {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+
+.lower-region .left-side button {
+  background-color: #ffefef;
+  color: black;
+  width: 150px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 1px solid #f1cdcd;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.info-control {
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+
+.lower-region .left-side h2 {
+  font-size: 18px;
+}
+
+.lower-region .right-side {
+  height: 100%;
+  width: 55%;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  overflow: auto;
+}
+
+.lower-region .right-side > div {
+  margin-right: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-control p {
+  font-size: 60px;
+  font-weight: lighter;
+  color: rgb(228, 141, 141);
+}
+
+.stat-control h2 {
+  font-size: 20px;
 }

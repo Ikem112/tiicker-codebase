@@ -1,12 +1,7 @@
 import { FaSearch, FaAngleDoubleDown, FaPlus } from "react-icons/fa";
 import { useRef, useState } from "react";
 
-const ProjectBar = ({
-  setProjectData,
-  userDetails,
-  addProjectRef,
-  addTaskRef,
-}) => {
+const ProjectBar = ({ setProjectData, userDetails, addProjectRef }) => {
   const [projects, setProjects] = useState(userDetails.projects);
 
   const handleProjectSelect = (e) => {

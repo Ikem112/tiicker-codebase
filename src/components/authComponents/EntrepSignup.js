@@ -169,7 +169,7 @@ const EntrepSignup = () => {
       </div>
 
       <div className="form-control">
-        <button>Submit</button>
+        <button className="button">Submit</button>
       </div>
     </form>
   );

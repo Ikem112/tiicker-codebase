@@ -4,12 +4,33 @@ import AddProject from "../components/dashboardComps/AddProject";
 import { useContext, useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import AddReminder from "../components/dashboardComps/AddReminder";
 
 const Dashboard = ({ userDetails, setUserDetails }) => {
   const [projectData, setProjectData] = useState(null);
 
   const addProjectRef = useRef(null);
   const addTaskRef = useRef(null);
+  const addReminderRef = useRef(null);
+
+  const getUserID = async (email) => {
+    const getUsers = async () => {
+      try {
+        const res = await fetch(`http://localhost:5000/users`);
+        const data = await res.json();
+
+        return data;
+      } catch (error) {
+        console.error("Error:", error);
+      }
+    };
+    const data = await getUsers();
+    console.log(data);
+    const curUser = data.find((user) => user.email === email);
+    console.log(curUser.id);
+
+    return curUser.id;
+  };
 
   return (
     <>
@@ -18,7 +39,6 @@ const Dashboard = ({ userDetails, setUserDetails }) => {
           userDetails={userDetails}
           setProjectData={setProjectData}
           addProjectRef={addProjectRef}
-          addTaskRef={addTaskRef}
         />
 
         <div className="info-display">
@@ -47,6 +67,12 @@ const Dashboard = ({ userDetails, setUserDetails }) => {
                 <div className="reminders">
                   <div className="reminder-title">
                     <h4>Reminders</h4>
+                    <h4
+                      onClick={() => addReminderRef.current.showModal()}
+                      style={{ cursor: "pointer" }}
+                    >
+                      Add
+                    </h4>
                   </div>
                   <ul>
                     {projectData.reminders.map((reminder, index) => (
@@ -57,12 +83,27 @@ const Dashboard = ({ userDetails, setUserDetails }) => {
               </>
             )}
           </div>
-          <TaskDisplay projectData={projectData} />
+          <TaskDisplay
+            projectData={projectData}
+            addTaskRef={addTaskRef}
+            getUserID={getUserID}
+            userDetails={userDetails}
+            setProjectData={setProjectData}
+          />
         </div>
         <AddProject
           addProjectRef={addProjectRef}
           userDetails={userDetails}
           setUserDetails={setUserDetails}
+          getUserID={getUserID}
+        />
+        <AddReminder
+          addReminderRef={addReminderRef}
+          setProjectData={setProjectData}
+          userDetails={userDetails}
+          setUserDetails={setUserDetails}
+          getUserID={getUserID}
+          projectData={projectData}
         />
       </div>
     </>

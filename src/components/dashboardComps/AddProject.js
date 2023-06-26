@@ -1,33 +1,20 @@
 import React from "react";
 import { useState } from "react";
 
-const AddProject = ({ addProjectRef, userDetails, setUserDetails }) => {
+const AddProject = ({
+  addProjectRef,
+  userDetails,
+  setUserDetails,
+  getUserID,
+}) => {
   const [newProjectName, setNewProjectName] = useState("");
   const [newProjectCat, setNewProjectCat] = useState("");
   const [newProjectCatList, setNewProjectCatList] = useState([]);
   const [newProjectDesc, setNewProjectDesc] = useState("");
 
   const [projectNameError, setProjectNameError] = useState(false);
-  const [catError, setCatError] = useState("");
+  const [catError, setCatError] = useState(null);
 
-  const getUserID = async (email) => {
-    const getUsers = async () => {
-      try {
-        const res = await fetch(`http://localhost:5000/users`);
-        const data = await res.json();
-
-        return data;
-      } catch (error) {
-        console.error("Error:", error);
-      }
-    };
-    const data = await getUsers();
-    console.log(data);
-    const curUser = data.find((user) => user.email === email);
-    console.log(curUser.id);
-
-    return curUser.id;
-  };
   const handleAddCat = () => {
     setNewProjectCat("");
     newProjectCatList.length === 3
@@ -43,7 +30,8 @@ const AddProject = ({ addProjectRef, userDetails, setUserDetails }) => {
 
     const newProject = {
       name: newProjectName,
-      category: newProjectCatList,
+      category:
+        newProjectCatList.length === 0 ? [newProjectCat] : newProjectCatList,
       description: newProjectDesc,
       tasks: [],
       reminders: [],
@@ -87,6 +75,7 @@ const AddProject = ({ addProjectRef, userDetails, setUserDetails }) => {
         setNewProjectDesc("");
         setNewProjectCat("");
 
+        window.location.reload();
         addProjectRef.current.close();
       } catch (error) {
         console.error("Error:", error);
@@ -102,7 +91,7 @@ const AddProject = ({ addProjectRef, userDetails, setUserDetails }) => {
 
   return (
     <>
-      <dialog className="modal add-project-modal" ref={addProjectRef}>
+      <dialog className="modal add-modal" ref={addProjectRef}>
         <div className="add-project-header-cont">
           <h1>Add Project</h1>
         </div>
@@ -120,9 +109,16 @@ const AddProject = ({ addProjectRef, userDetails, setUserDetails }) => {
             <input
               type="text"
               value={newProjectCat}
-              onChange={(e) => setNewProjectCat(e.target.value)}
+              onChange={(e) => {
+                setNewProjectCat(e.target.value);
+                setCatError(null);
+              }}
             />
-            <span onClick={handleAddCat}>Click to add another category</span>
+            {!catError ? (
+              <span onClick={handleAddCat}>Click to add another category</span>
+            ) : (
+              <span style={{ color: "red" }}>{catError}</span>
+            )}
             <div className="selected-cats">
               {!newProjectCatList ? (
                 <h3></h3>
@@ -146,6 +142,7 @@ const AddProject = ({ addProjectRef, userDetails, setUserDetails }) => {
           </div>
           <div className="button-cont">
             <button
+              id="defined-button"
               type="button"
               onClick={() =>
                 addProjectRef.current && addProjectRef.current.close()
@@ -153,7 +150,7 @@ const AddProject = ({ addProjectRef, userDetails, setUserDetails }) => {
             >
               Close
             </button>
-            <button>Add</button>
+            <button id="defined-button">Add</button>
           </div>
         </form>
       </dialog>
