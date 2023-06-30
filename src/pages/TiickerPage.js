@@ -5,12 +5,14 @@ import { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext";
 import { useState } from "react";
 import UserProfile from "../components/profileComps/UserProfile";
+import SettingsPage from "../components/settingsComps/SettingsPage";
 
 const TiickerPage = () => {
   const [userDetails, setUserDetails] = useState(
     JSON.parse(localStorage.getItem("user"))
   );
   const location = useLocation();
+  const [projectData, setProjectData] = useState(null);
   // const getUser = async (storedUser) => {
   //   try {
   //     const res = await fetch(`http://localhost:5000/users`);
@@ -46,10 +48,18 @@ const TiickerPage = () => {
           <Dashboard
             userDetails={userDetails}
             setUserDetails={setUserDetails}
+            projectData={projectData}
+            setProjectData={setProjectData}
           />
         )}
         {location.pathname === "/profile" && (
           <UserProfile
+            userDetails={userDetails}
+            setUserDetails={setUserDetails}
+          />
+        )}
+        {location.pathname === "/settings" && (
+          <SettingsPage
             userDetails={userDetails}
             setUserDetails={setUserDetails}
           />

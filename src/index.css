@@ -1113,7 +1113,7 @@ dialog:not([open]) {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .lower-region .right-side > div {
@@ -1133,4 +1133,139 @@ dialog:not([open]) {
 
 .stat-control h2 {
   font-size: 20px;
+}
+
+.user-settings {
+  height: 100%;
+  width: 100%;
+  padding: 0px 200px 0px 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.setting-title-cont {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.setting-title-cont h1 {
+  font-size: 25px;
+}
+
+.setting-title-cont img {
+  width: 25px;
+  height: 25px;
+  margin-left: 5px;
+}
+
+.settings-body {
+  width: 100%;
+  height: 550px;
+  border-radius: 15px 15px 0px 0px;
+  background-color: white;
+  overflow: auto;
+  padding: 40px 30px 40px 30px;
+}
+
+.setting-category {
+  padding-bottom: 5px;
+}
+
+.setting-category h1 {
+  font-size: 20px;
+}
+
+.setting-category p {
+  font-size: 15px;
+}
+
+.setting-type-group {
+  display: flex;
+  height: auto;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 25px;
+  border-top: 1px solid black;
+  justify-content: space-between;
+}
+
+.type-title-cont {
+  width: 60%;
+  padding-right: 60px;
+}
+
+.setting-type-group h2 {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.setting-type-group p {
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.setting-toggler-cont {
+  height: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.toggler-option {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+.switch input[type="checkbox"] {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.toggle-desc {
+  width: 250px;
 }

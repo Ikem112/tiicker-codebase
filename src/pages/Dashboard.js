@@ -6,9 +6,12 @@ import { useState } from "react";
 import { useEffect } from "react";
 import AddReminder from "../components/dashboardComps/AddReminder";
 
-const Dashboard = ({ userDetails, setUserDetails }) => {
-  const [projectData, setProjectData] = useState(null);
-
+const Dashboard = ({
+  userDetails,
+  setUserDetails,
+  projectData,
+  setProjectData,
+}) => {
   const addProjectRef = useRef(null);
   const addTaskRef = useRef(null);
   const addReminderRef = useRef(null);

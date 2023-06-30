@@ -23,6 +23,7 @@ const App = () => {
           <Route path="/test" element={<Test />} />
           <Route path="/dashboard" element={<TiickerPage />} />
           <Route path="/profile" element={<TiickerPage />} />
+          <Route path="/settings" element={<TiickerPage />} />
         </Routes>
       </Router>
     </UserContext.Provider>
