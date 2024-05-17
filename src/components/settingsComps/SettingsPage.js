@@ -3,11 +3,16 @@ import settingsIcon from "../../image_folder/icons/Settings.png";
 
 const SettingsPage = ({ userDetails }) => {
   const [userSettings, setUserSettings] = useState({
-    emailProductUpdate: userDetails.emailNotifications.productUpdate,
-    emailTaskUpdate: userDetails.emailNotifications.taskUpdates,
-    emailWorkspaceUpdated: userDetails.emailNotifications.workspaceUpdates,
-    pushTaskUpdates: userDetails.pushNotifications.taskUpdates,
-    pushWorkspaceUpdates: userDetails.pushNotifications.workspaceUpdates,
+    emailProductUpdate:
+      userDetails["userPreferences"]["emailNotifications"]["productUpdate"],
+    emailTaskUpdate:
+      userDetails["userPreferences"]["emailNotifications"]["taskUpdates"],
+    emailWorkspaceUpdated:
+      userDetails["userPreferences"]["emailNotifications"]["workspaceUpdates"],
+    pushTaskUpdates:
+      userDetails["userPreferences"]["pushNotifications"]["taskUpdates"],
+    pushWorkspaceUpdates:
+      userDetails["userPreferences"]["pushNotifications"]["workspaceUpdates"],
   });
 
   const handleSettingChange = async (e) => {
@@ -20,25 +25,29 @@ const SettingsPage = ({ userDetails }) => {
       const body = {
         ...userDetails,
         userPreferences: {
-          ...userPreferences,
-          emailNotifications: { ...emailNotifications, value: !isChecked },
+          ...userDetails.userPreferences,
+          emailNotifications: {
+            ...userDetails.userPreferences.emailNotifications,
+            value: !isChecked,
+          },
         },
       };
-    }
-    elif(e.target.value.startsWith("push"));
+    } else if (e.target.value.startsWith("push"));
 
-    const res = await fetch(`http://localhost:5000/users/${id}`, {
+    const res = await fetch(`http://localhost:3000/users/${userDetails.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify(),
     });
   };
 
   return (
     <>
       <div className="user-settings">
+        {console.log(userDetails)}
+
         <div className="setting-title-cont">
           <h1>Settings</h1>
           <img src={settingsIcon} alt="" className="settings-icon-img" />

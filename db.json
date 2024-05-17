@@ -334,6 +334,50 @@
         }
       },
       "id": 4
+    },
+    {
+      "firstName": "fi",
+      "lastName": "stew",
+      "email": "fi.stew@mail.com",
+      "password": "pass",
+      "level": "individual",
+      "projects": [
+        {
+          "name": "nursing",
+          "category": [
+            "homecare"
+          ],
+          "description": "to find out the solution for home care",
+          "tasks": [
+            {
+              "name": "questionaire",
+              "category": [
+                "data collection"
+              ],
+              "content": "to collect sample data on current patients under nursing home care",
+              "level": "newtask",
+              "levelChangeDate": null,
+              "completionDate": null,
+              "dueDate": "2024-05-30T23:00:00.000Z"
+            }
+          ],
+          "reminders": []
+        }
+      ],
+      "userCreationDate": "2024-05-17T10:00:13.610Z",
+      "notifications": [],
+      "userPreferences": {
+        "emailNotifications": {
+          "productUpdate": true,
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        },
+        "pushNotifications": {
+          "taskUpdates": true,
+          "workspaceUpdates": true
+        }
+      },
+      "id": 5
     }
   ]
 }

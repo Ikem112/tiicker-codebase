@@ -96,7 +96,7 @@ const AddTasks = ({
           (obj) => obj.name === projectData.name
         );
 
-        const res = await fetch(`http://localhost:5000/users/${id}`, {
+        const res = await fetch(`http://localhost:3000/users/${id}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",

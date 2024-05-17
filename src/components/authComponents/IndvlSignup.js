@@ -12,7 +12,7 @@ const IndvlSignup = () => {
 
   const addUser = async (user) => {
     try {
-      const res = await fetch(`http://localhost:5000/users`, {
+      const res = await fetch(`http://localhost:3000/users`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
