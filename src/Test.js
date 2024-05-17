@@ -1,86 +1,45 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+// import React from "react";
 
-const Test = () => {
-  // const [data, setData] = useState([]);
+// const Test = () => {
+//   const animals = ["dog", "cat", "mouse", "cow", "rat"];
 
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch("http://localhost:5000/users");
-  //     let data = await response.json();
+//   const newAnimals = animals.map((animal) => {
+//     animal.length === 3;
+//   });
 
-  //     data = data[0].email;
-  //     setData(data); // Set the fetched projects data as state
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+//   animals.length === 8
+//     ? console.log("this is true")
+//     : console.log("this is not true");
 
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
+//   console.log(newAnimals);
 
-  // const handleClick = () => {
-  //   console.log(data);
-  // };
-  const user = {
-    firstName: "bob",
-    lastName: "stew",
-    email: "ikem.eteh@gmail.com",
-    password: "pass",
-    level: "individual",
-    projects: [
-      {
-        name: "RedTech",
-        category: ["Finance", "WebApp"],
-        description: "A project to help pay the salaries of individuals",
-        tasks: [],
-        reminders: [],
-      },
-      {
-        name: "ACH",
-        category: ["Finance", "Registration"],
-        description: "A project to help submit cheques for approval",
-        tasks: [],
-        reminders: [],
-      },
-      {
-        name: "",
-        category: [],
-        description: "",
-        tasks: [],
-        reminders: [],
-      },
-    ],
-    userCreationDate: "2023-06-08T17:55:14.473Z",
-    notifications: [],
-    id: 2,
-  };
+//   return <div></div>;
+// };
 
-  const index = user.projects.findIndex((obj) => obj.name === "RedTech");
+// export default Test;
 
-  const updated_user = {
-    ...user,
-    projects: [
-      ...user.projects.slice(0, index),
-      {
-        ...user.projects[index],
-        tasks: [...user.projects[index].tasks, { name: "bob", age: 12 }],
-      },
-      ...user.projects.slice(index + 1),
-    ],
-  };
+// const getUser = async (storedUser) => {
+//   try {
+//     const res = await fetch(`http://localhost:5000/users`);
+//     const data = await res.json();
+//     console.log(data);
 
-  return (
-    <div>
-      {console.log({
-        ...user.projects[index],
-        tasks: [...user.projects[index].tasks, { name: "bob", age: 12 }],
-      })}
-      {console.log(updated_user)}
-      <div></div>
-    </div>
-  );
-};
+//     const user = data.find((user) => user.email === storedUser);
+//     console.log(user);
 
-export default Test;
+//     localStorage.setItem("id", user.id);
+//     localStorage.setItem("firstName", user.firstName);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+// useEffect(() => {
+//   const param = localStorage.getItem("email");
+//   getUser(param);
+//   console.log("hi from useEffect");
+// });
+
+// useEffect(() => {
+//   window.location.reload();
+// });

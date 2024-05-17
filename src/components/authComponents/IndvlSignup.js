@@ -71,45 +71,6 @@ const IndvlSignup = () => {
 
   const elementRef = useRef(null);
 
-  // const validation = () => {
-  //   const errors = {};
-  //   const { firstName, lastName, password, confirmPassword, company, email } =
-  //     userObj;
-  //   if (firstName === "") {
-  //     errors.firstName = "This field is required";
-  //   }
-  //   if (lastName === "") {
-  //     errors.lastName = "This field is required";
-  //   }
-  //   if (firstName === "") {
-  //     errors.firstName = "This field is required";
-  //   }
-  //   if (password === "") {
-  //     errors.password = "This field is required";
-  //   }
-  //   if (confirmPassword === "") {
-  //     errors.confirmPassword = "This field is required";
-  //   }
-  //   if (company === "") {
-  //     errors.company = "This field is required";
-  //   }
-  //   if (email === "") {
-  //     errors.email = "This field is required";
-  //   }
-
-  //   return errors;
-  // };
-
-  // const handleCheckError = () => {
-  //   const checkError = validation();
-  //   setFieldError(checkError);
-
-  //   if (Object.keys(checkError).length > 0) return;
-
-  //   setFieldError({});
-  //   console.log("regustration successful");
-  // };
-
   const handleRegSubmit = (e) => {
     console.log("heyyy");
     e.preventDefault();
